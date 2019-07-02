@@ -1,0 +1,100 @@
+@font-face {
+    font-family: "Digital 7";
+    src: url("fonts/digital-7.ttf");
+    font-weight: normal;
+}
+
+.calculator {
+    background-color: #eeeeee;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px 5px #888888;
+    font-family: "Digital 7";
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 1px solid black;
+    height: 410px;
+    width: 300px;
+    padding: 10px;
+}
+
+.calculator h2 {
+    font-size: 1.2em;
+    font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.calculator h2 span {
+    color: #ee7b28;
+}
+
+.display {
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px #888888;
+    font-family: "Digital 7";
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.time {
+    float: left;
+    font-size: 0.8em;
+}
+
+.date {
+    float: right;
+    font-size: 0.8em;
+}
+
+.steps {
+    clear: both;
+    text-align: right;
+}
+
+.calculation {
+    clear: both;
+    font-size: 2em;
+    line-height: 1.3em;
+}
+
+.keyboard {
+    display: grid;
+    grid-template-areas:
+    "ac ce percent division"
+    "btn7 btn8 btn9 multiplication"
+    "btn4 btn5 btn6 minus"
+    "btn1 btn2 btn3 plus"
+    "btn0 point equal plus";
+    grid-gap: 5px;
+    margin-top: 10px;
+}
+
+.btn {
+    border: 1px solid gray;
+    box-shadow: 1px 1px 1px 1px #888888;
+    font-family: apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 1.6em;
+}
+
+.btn-ac { grid-area: ac; background-color: #ee7b28; color: #dbdbdb;}
+.btn-ce { grid-area: ce; background-color: #ee7b28; color: #dbdbdb;}
+.btn-percent { grid-area: percent; }
+.btn-division { grid-area: division; }
+.btn-7 { grid-area: btn7; }
+.btn-8 { grid-area: btn8; }
+.btn-9 { grid-area: btn9; }
+.btn-multiplication { grid-area: multiplication; }
+.btn-4 { grid-area: btn4; }
+.btn-5 { grid-area: btn5; }
+.btn-6 { grid-area: btn6; }
+.btn-minus { grid-area: minus; }
+.btn-1 { grid-area: btn1; }
+.btn-2 { grid-area: btn2; }
+.btn-3 { grid-area: btn3; }
+.btn-plus { grid-area: plus; line-height: 3.2em;}
+.btn-1 { grid-area: btn1; }
+.btn-0 { grid-area: btn0; }
+.btn-point { grid-area: point; }
+.btn-equal { grid-area: equal; }
+
+
