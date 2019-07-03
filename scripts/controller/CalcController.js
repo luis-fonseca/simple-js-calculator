@@ -248,6 +248,10 @@ class CalcController {
     }
 
     set displayCalculation(value) {
+        if (value.toString().length > 17) {
+            this.setError();
+            return false;
+        }
         this._calculationEl.innerHTML = value;
     }
 
