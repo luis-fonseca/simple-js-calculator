@@ -2,6 +2,8 @@ class CalcController {
 
     constructor() {
 
+        this._audio = new Audio("audio/click.mp3");
+        this._audioOnOff = false;
         this._lastOperator;
         this._lastNumber;
 
@@ -30,7 +32,25 @@ class CalcController {
 
         this.setLastNumberToDisplay();
         this.pasteFromClipboard();
+
+        document.querySelector(".btn-ac").addEventListener("dblclick", e => {
+            this.toggleAudio();
+        });
+
     } // end initialize
+
+    toggleAudio() {
+
+        this._audioOnOff = !this._audioOnOff;
+
+    }
+
+    playAudio() {
+        if (this._audioOnOff) {
+            this._audio.currentTime = 0;
+            this._audio.play();
+        }
+    }
 
     /**
      * Configura os eventos nos botões
@@ -49,6 +69,8 @@ class CalcController {
     initializeKeyboard() {
 
         document.addEventListener("keyup", e => {
+
+            this.playAudio();
 
             switch (e.key) {
                 case "Escape":
@@ -104,6 +126,8 @@ class CalcController {
      * @param {*} value
      */
     execButton(value) {
+
+        this.playAudio();
 
         switch (value) {
             case "ac":
