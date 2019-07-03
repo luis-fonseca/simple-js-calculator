@@ -330,7 +330,14 @@ class CalcController {
     } // pushOperation
 
     getResult() {
-        return eval(this._operation.join(""));
+        try {
+            return eval(this._operation.join(""));
+        } catch (e) {
+            // uma outra opção é definir um setTimeout e inserir a função setError
+            // após 0 segundos.
+            this.setError();
+        }
+
     }
 
     /**
