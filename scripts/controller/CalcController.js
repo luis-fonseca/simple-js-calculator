@@ -14,6 +14,7 @@ class CalcController {
 
         this.initialize();
         this.initializeButtonsEvents();
+        this.initializeKeyboard();
     } // end constructor
 
     /**
@@ -43,6 +44,56 @@ class CalcController {
             });
         }) // end forEach
     } // initializeButtonsEvents
+
+    initializeKeyboard() {
+
+        document.addEventListener("keyup", e => {
+
+            switch (e.key) {
+                case "Escape":
+                    this.clearAll();
+                    break;
+
+                case "Backspace":
+                    this.clearEntry();
+                    break;
+
+                case "/":
+                case "%":
+                case "*":
+                case "-":
+                case "+":
+                    this.addOperation(e.key)
+                    break;
+
+                case "Enter":
+                case "=":
+                    this.calc();
+                    break;
+
+                case ".":
+                case ",":
+                    this.addPoint()
+                    break;
+
+                case "0":
+                case "1":
+                case "2":
+                case "3":
+                case "4":
+                case "5":
+                case "6":
+                case "7":
+                case "8":
+                case "9":
+                    this.addOperation(e.key);
+                    break;
+
+                default:
+                    //
+            }
+        });
+    }
 
     /**
      * O evento a ser atribuído ao botão.
@@ -176,7 +227,7 @@ class CalcController {
      * Exibe nos controles a data e hora atual
      */
     setDisplayDateTime() {
-        this.displayDate = this.moment.toLocaleDateString(this.locale);
+        this.displayDate = this.moment.toLocaleDateString(this.locale, { day: '2-digit', month: 'long', year: 'numeric' });
         this.displayTime = this.moment.toLocaleTimeString(this.locale);
     } // end setDisplayDateTime
 
